@@ -5,6 +5,7 @@ from os import listdir
 from os.path import join
 from lxml import etree
 from collections import defaultdict
+from nltk.tokenize import MWETokenizer
 
 
 class ThesaurusParser:
@@ -193,3 +194,15 @@ class ThesaurusParser:
         self.closed_hypernymy = json.load(open(path_closed))
         self.text_entries = json.load(open(path_text_entries))
         self.lemma_to_entry = json.load(open(path_lemma_to_entry))
+        
+        
+    def form_mwe_tokenizer(self):
+        mwes = []
+    
+        for _, entry in self.text_entries.items():
+            term = entry["lemma"]
+            splitted = term.split()
+            if len(term.split()) > 1:
+                mwes.append(tuple(splitted))
+
+        return MWETokenizer(mwes=mwes, separator=" ")

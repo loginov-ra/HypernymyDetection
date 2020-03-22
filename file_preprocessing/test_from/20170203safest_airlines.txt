@@ -1,0 +1,331 @@
+# text = # newpar
+# sent_id = 3586
+# text = В рейтинг самых безопасных авиакомпаний мира, составленный немецкой компанией Jacdec, попали 15 перевозчиков, летающих в Россию.
+1	В	в	ADP	_	_	2	case	_	_
+2	рейтинг	рейтинг	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	13	obl	_	_
+3	самых	самый	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	4	amod	_	_
+4	безопасных	безопасной	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	5	amod	_	_
+5	авиакомпаний	авиакомпания	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	2	nmod	_	_
+6	мира	мир	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	5	nmod	_	SpaceAfter=No
+7	,	,	PUNCT	_	_	6	punct	_	_
+8	составленный	составлять	VERB	_	Aspect=Perf|Case=Nom|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	6	amod	_	_
+9	немецкой	немецкий	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	10	amod	_	_
+10	компанией	компания	NOUN	_	Animacy=Inan|Case=Ins|Gender=Fem|Number=Sing	8	obl	_	_
+11	Jacdec	Jacdeцельсий-знак	PROPN	_	Animacy=Anim|Case=Gen|Gender=Masc|Number=Sing	10	nmod	_	SpaceAfter=No
+12	,	,	PUNCT	_	_	11	punct	_	_
+13	попали	попадать	VERB	_	Aspect=Perf|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+14	15	15	NUM	_	_	15	nummod	_	_
+15	перевозчиков	перевозчик	NOUN	_	Animacy=Anim|Case=Gen|Gender=Masc|Number=Plur	13	nsubj	_	SpaceAfter=No
+16	,	,	PUNCT	_	_	15	punct	_	_
+17	летающих	летать	VERB	_	Aspect=Imp|Case=Gen|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	15	amod	_	_
+18	в	в	ADP	_	_	19	case	_	_
+19	Россию	россия	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	17	obl	_	SpaceAfter=No
+20	.	.	PUNCT	_	_	19	punct	_	_
+
+# sent_id = 3587
+# text = Об этом в пятницу, 3 февраля, сообщает портал "Рамблер/Путешествия".В данном списке на третьем месте оказалась китайская Hainan Airlines.
+1	Об	о	ADP	_	_	2	case	_	_
+2	этом	это	PRON	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	9	obl	_	_
+3	в	в	ADP	_	_	4	case	_	_
+4	пятницу	пятница	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	9	obl	_	SpaceAfter=No
+5	,	,	PUNCT	_	_	4	punct	_	_
+6	3	3	NUM	_	_	7	nummod	_	_
+7	февраля	февраль	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	4	conj	_	SpaceAfter=No
+8	,	,	PUNCT	_	_	7	punct	_	_
+9	сообщает	сообщать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+10	портал	портал	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	9	obj	_	_
+11	"	"	PUNCT	_	_	12	punct	_	SpaceAfter=No
+12	Рамблер/Путешествия	Рамблер/Путешествие	PROPN	_	Animacy=Inan|Case=Acc|Gender=Neut|Number=Plur	10	appos	_	SpaceAfter=No
+13	"	"	PUNCT	_	_	12	punct	_	SpaceAfter=No
+14	.	.	PUNCT	_	_	12	punct	_	SpaceAfter=No
+15	В	в	ADP	_	_	17	case	_	_
+16	данном	данный	ADJ	_	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	17	amod	_	_
+17	списке	список	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	21	obl	_	_
+18	на	на	ADP	_	_	20	case	_	_
+19	третьем	третий	ADJ	_	Case=Loc|Degree=Pos|Gender=Neut|Number=Sing	20	amod	_	_
+20	месте	место	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	21	obl	_	_
+21	оказалась	оказываться	VERB	_	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	9	parataxis	_	_
+22	китайская	китайский	ADJ	_	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	23	amod	_	_
+23	Hainan	Hainan	PROPN	_	Foreign=Yes	21	nsubj	_	_
+24	Airlines	airlines	PROPN	_	Foreign=Yes	23	flat:foreign	_	SpaceAfter=No
+25	.	.	PUNCT	_	_	24	punct	_	_
+
+# sent_id = 3588
+# text = Полеты в Россию авиакомпания начала в 2009 году.
+1	Полеты	полет	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur	5	nsubj	_	_
+2	в	в	ADP	_	_	3	case	_	_
+3	Россию	россия	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	1	nmod	_	_
+4	авиакомпания	авиакомпания	NOUN	_	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	5	nsubj	_	_
+5	начала	начинать	VERB	_	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+6	в	в	ADP	_	_	8	case	_	_
+7	2009	2009	NUM	_	_	8	nummod	_	_
+8	году	год	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	5	obl	_	SpaceAfter=No
+9	.	.	PUNCT	_	_	8	punct	_	_
+
+# sent_id = 3589
+# text = Она выполняет рейсы в Москву, Санкт-Петербург и Иркутск.
+1	Она	она	PRON	_	Case=Nom|Gender=Fem|Number=Sing|Person=3	2	nsubj	_	_
+2	выполняет	выполнять	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+3	рейсы	рейс	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Plur	2	obj	_	_
+4	в	в	ADP	_	_	5	case	_	_
+5	Москву	москва	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	2	obl	_	SpaceAfter=No
+6	,	,	PUNCT	_	_	5	punct	_	_
+7	Санкт-Петербург	санкт-петербург	PROPN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	5	conj	_	_
+8	и	и	CCONJ	_	_	9	cc	_	_
+9	Иркутск	Иркутск	PROPN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	5	conj	_	SpaceAfter=No
+10	.	.	PUNCT	_	_	9	punct	_	_
+
+# sent_id = 3590
+# text = За все время работы с лайнерами Hainan Airlines не случалось инцидентов с жертвами.Материалы по теме00:12 22 марта 2016Летать и не боятьсяСамые безопасные авиакомпании мираЧетвертое место досталось национальному перевозчику Катара Qatar Airways.
+1	За	за	ADP	_	_	3	case	_	_
+2	все	весь	DET	_	Case=Acc|Gender=Neut|Number=Sing	3	amod	_	_
+3	время	время	NOUN	_	Animacy=Inan|Case=Acc|Gender=Neut|Number=Sing	10	obl	_	_
+4	работы	работа	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	10	nsubj	_	_
+5	с	с	ADP	_	_	6	case	_	_
+6	лайнерами	лайнер	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Plur	4	nmod	_	_
+7	Hainan	Hainan	PROPN	_	Foreign=Yes	6	flat:foreign	_	_
+8	Airlines	airlines	PROPN	_	Foreign=Yes	7	flat:foreign	_	_
+9	не	не	PART	_	_	10	advmod	_	_
+10	случалось	случаться	VERB	_	Aspect=Imp|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	0	root	_	_
+11	инцидентов	инцидент	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	10	obl	_	_
+12	с	с	ADP	_	_	13	case	_	_
+13	жертвами	жертва	NOUN	_	Animacy=Anim|Case=Ins|Gender=Fem|Number=Plur	11	nmod	_	SpaceAfter=No
+14	.	.	PUNCT	_	_	13	punct	_	SpaceAfter=No
+15	Материалы	материала	PROPN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	13	nmod	_	_
+16	по	по	ADP	_	_	18	case	_	_
+17	теме00	теме00	NUM	_	_	18	nummod	_	SpaceAfter=No
+18	:12	:12	NOUN	_	_	21	obl	_	_
+19	22	22	NUM	_	_	18	nummod	_	_
+20	марта	март	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	19	nmod	_	_
+21	2016Летать	2016Летать	VERB	_	Aspect=Imp|VerbForm=Inf|Voice=Act	10	nsubj	_	_
+22	и	и	CCONJ	_	_	26	cc	_	_
+23	не	не	PART	_	_	24	advmod	_	_
+24	боятьсяСамые	боятьсяСамый	ADJ	_	Animacy=Inan|Case=Acc|Degree=Pos|Number=Plur	26	amod	_	_
+25	безопасные	безопасный	ADJ	_	Animacy=Inan|Case=Acc|Degree=Pos|Number=Plur	26	amod	_	_
+26	авиакомпании	авиакомпания	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Plur	29	conj	_	_
+27	мираЧетвертое	мираЧетвертый	ADJ	_	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	28	amod	_	_
+28	место	место	NOUN	_	Animacy=Inan|Case=Nom|Gender=Neut|Number=Sing	29	nsubj	_	_
+29	досталось	доставаться	VERB	_	Aspect=Perf|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	21	parataxis	_	_
+30	национальному	национальной	ADJ	_	Case=Dat|Degree=Pos|Gender=Masc|Number=Sing	31	amod	_	_
+31	перевозчику	перевозчик	NOUN	_	Animacy=Inan|Case=Dat|Gender=Masc|Number=Sing	29	obl	_	_
+32	Катара	Катар	PROPN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	31	nmod	_	_
+33	Qatar	Qatar	PROPN	_	Foreign=Yes	32	flat:foreign	_	_
+34	Airways	airways	PROPN	_	Foreign=Yes	33	flat:foreign	_	SpaceAfter=No
+35	.	.	PUNCT	_	_	34	punct	_	_
+
+# sent_id = 3591
+# text = Он начал летать в Россию в 2004 году.
+1	Он	он	PRON	_	Case=Nom|Gender=Masc|Number=Sing|Person=3	2	nsubj	_	_
+2	начал	начинать	VERB	_	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+3	летать	летать	VERB	_	Aspect=Imp|VerbForm=Inf|Voice=Act	2	xcomp	_	_
+4	в	в	ADP	_	_	5	case	_	_
+5	Россию	россия	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	3	obl	_	_
+6	в	в	ADP	_	_	8	case	_	_
+7	2004	2004	NUM	_	_	8	nummod	_	_
+8	году	год	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	3	obl	_	SpaceAfter=No
+9	.	.	PUNCT	_	_	8	punct	_	_
+
+# sent_id = 3592
+# text = Рейс из катарской столицы Доха в Москву пока является для авиакомпании единственным на российском направлении.На пятой строчке находится нидерландский перевозчик KLM.
+1	Рейс	рейс	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	9	nsubj	_	_
+2	из	из	ADP	_	_	4	case	_	_
+3	катарской	катарский	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	4	amod	_	_
+4	столицы	столица	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	1	nmod	_	_
+5	Доха	Дох	PROPN	_	Animacy=Anim|Case=Gen|Gender=Masc|Number=Sing	4	nmod	_	_
+6	в	в	ADP	_	_	7	case	_	_
+7	Москву	москва	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	1	nmod	_	_
+8	пока	пока	ADV	_	Degree=Pos	9	advmod	_	_
+9	является	являться	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Mid	0	root	_	_
+10	для	для	ADP	_	_	11	case	_	_
+11	авиакомпании	авиакомпания	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	20	obl	_	_
+12	единственным	единственный	ADJ	_	Case=Ins|Degree=Pos|Gender=Masc|Number=Sing	11	amod	_	_
+13	на	на	ADP	_	_	15	case	_	_
+14	российском	российский	ADJ	_	Case=Loc|Degree=Pos|Gender=Neut|Number=Sing	15	amod	_	_
+15	направлении	направление	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	12	nmod	_	SpaceAfter=No
+16	.	.	PUNCT	_	_	15	punct	_	SpaceAfter=No
+17	На	на	ADP	_	_	19	case	_	_
+18	пятой	пятый	ADJ	_	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	19	amod	_	_
+19	строчке	строчка	NOUN	_	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	20	obl	_	_
+20	находится	находиться	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Mid	9	parataxis	_	_
+21	нидерландский	нидерландский	ADJ	_	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	22	amod	_	_
+22	перевозчик	перевозчик	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	20	nsubj	_	_
+23	KLM	klm	PROPN	_	Foreign=Yes	22	flat:foreign	_	SpaceAfter=No
+24	.	.	PUNCT	_	_	23	punct	_	_
+
+# sent_id = 3593
+# text = Он летает из Амстердама в Москву и Петербург.
+1	Он	он	PRON	_	Case=Nom|Gender=Masc|Number=Sing|Person=3	2	nsubj	_	_
+2	летает	летать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+3	из	из	ADP	_	_	4	case	_	_
+4	Амстердама	Амстердам	PROPN	_	Animacy=Anim|Case=Acc|Gender=Masc|Number=Sing	2	obl	_	_
+5	в	в	ADP	_	_	6	case	_	_
+6	Москву	москва	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	2	obl	_	_
+7	и	и	CCONJ	_	_	8	cc	_	_
+8	Петербург	петербург	PROPN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	6	conj	_	SpaceAfter=No
+9	.	.	PUNCT	_	_	8	punct	_	_
+
+# sent_id = 3594
+# text = В 1977 самолет авиакомпании попал в катастрофу в Испании, ставшую крупнейшей в истории гражданской авиации: тогда погибло 583 человека.Единственной российской авиакомпанией в списке оказался "Аэрофлот".
+1	В	в	ADP	_	_	2	case	_	_
+2	1977	1977	NUM	_	_	5	nummod	_	_
+3	самолет	самолет	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	5	nsubj	_	_
+4	авиакомпании	авиакомпания	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	3	nmod	_	_
+5	попал	попадать	VERB	_	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	_
+6	в	в	ADP	_	_	7	case	_	_
+7	катастрофу	катастрофа	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	5	obl	_	_
+8	в	в	ADP	_	_	9	case	_	_
+9	Испании	испания	PROPN	_	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	5	obl	_	SpaceAfter=No
+10	,	,	PUNCT	_	_	9	punct	_	_
+11	ставшую	становиться	VERB	_	Aspect=Perf|Case=Acc|Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Mid	0	amod	_	_
+12	крупнейшей	крупный	ADJ	_	Case=Gen|Degree=Sup|Gender=Fem|Number=Sing	14	amod	_	_
+13	в	в	ADP	_	_	12	case	_	_
+14	истории	история	NOUN	_	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	11	obl	_	_
+15	гражданской	гражданский	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	16	amod	_	_
+16	авиации	авиация	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	14	nmod	_	SpaceAfter=No
+17	:	:	PUNCT	_	_	16	punct	_	_
+18	тогда	тогда	ADV	_	Degree=Pos	19	advmod	_	_
+19	погибло	погибать	VERB	_	Aspect=Perf|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	0	conj	_	_
+20	583	583	NUM	_	_	21	nummod	_	_
+21	человека.	человека.	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Sing	19	obl	_	SpaceAfter=No
+22	Единственной	единственный	ADJ	_	Case=Ins|Degree=Pos|Gender=Fem|Number=Sing	24	amod	_	_
+23	российской	российский	ADJ	_	Case=Ins|Degree=Pos|Gender=Fem|Number=Sing	24	amod	_	_
+24	авиакомпанией	авиакомпания	NOUN	_	Animacy=Inan|Case=Ins|Gender=Fem|Number=Sing	27	obl	_	_
+25	в	в	ADP	_	_	26	case	_	_
+26	списке	список	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	27	nmod	_	_
+27	оказался	оказываться	VERB	_	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	0	conj	_	_
+28	"	"	PUNCT	_	_	29	punct	_	SpaceAfter=No
+29	Аэрофлот	аэрофлот	PROPN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	27	nsubj	_	SpaceAfter=No
+30	"	"	PUNCT	_	_	29	punct	_	SpaceAfter=No
+31	.	.	PUNCT	_	_	29	punct	_	_
+
+# sent_id = 3595
+# text = Ему досталась 37-я строчка мирового рейтинга.Кроме того, в список включили летающие в Россию авиакомпании Emirates и Etihad Airways (ОАЭ), Japan Airlines (Япония), немецкую Lufthansa, португальскую TAP Portugal, British Airways, испанскую Iberia, Singapore Airlines (Сингапур).
+1	Ему	он	PRON	_	Case=Dat|Gender=Masc|Number=Sing|Person=3	2	obl	_	_
+2	досталась	доставаться	VERB	_	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	0	root	_	_
+3	37-я	37-й	ADJ	_	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	4	amod	_	_
+4	строчка	строчка	NOUN	_	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	2	nsubj	_	_
+5	мирового	мировой	ADJ	_	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	6	amod	_	_
+6	рейтинга.	рейтинга.	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Sing	4	nmod	_	SpaceAfter=No
+7	Кроме	Кроме	ADP	_	_	8	case	_	_
+8	того	то	PRON	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	12	parataxis	_	SpaceAfter=No
+9	,	,	PUNCT	_	_	8	punct	_	_
+10	в	в	ADP	_	_	11	case	_	_
+11	список	список	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	12	obl	_	_
+12	включили	включать	VERB	_	Aspect=Perf|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin|Voice=Act	0	parataxis	_	_
+13	летающие	летать	VERB	_	Animacy=Inan|Aspect=Imp|Case=Acc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	16	amod	_	_
+14	в	в	ADP	_	_	15	case	_	_
+15	Россию	россия	PROPN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	13	obl	_	_
+16	авиакомпании	авиакомпания	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	12	obl	_	_
+17	Emirates	Emirates	PROPN	_	Foreign=Yes	16	flat:foreign	_	_
+18	и	и	CCONJ	_	_	19	cc	_	_
+19	Etihad	Etihad	PROPN	_	Foreign=Yes	17	flat:foreign	_	_
+20	Airways	airways	PROPN	_	Foreign=Yes	19	flat:foreign	_	_
+21	(	(	PUNCT	_	_	22	punct	_	SpaceAfter=No
+22	ОАЭ	оаэ	PROPN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	20	parataxis	_	SpaceAfter=No
+23	)	)	PUNCT	_	_	22	punct	_	SpaceAfter=No
+24	,	,	PUNCT	_	_	22	punct	_	_
+25	Japan	Japan	PROPN	_	Foreign=Yes	20	flat:foreign	_	_
+26	Airlines	airlines	PROPN	_	Foreign=Yes	25	flat:foreign	_	_
+27	(	(	PUNCT	_	_	28	punct	_	SpaceAfter=No
+28	Япония	япония	PROPN	_	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	26	appos	_	SpaceAfter=No
+29	)	)	PUNCT	_	_	28	punct	_	SpaceAfter=No
+30	,	,	PUNCT	_	_	28	punct	_	_
+31	немецкую	немецкий	ADJ	_	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	32	amod	_	_
+32	Lufthansa	Lufthansa	PROPN	_	Foreign=Yes	12	flat:foreign	_	SpaceAfter=No
+33	,	,	PUNCT	_	_	32	punct	_	_
+34	португальскую	португальский	ADJ	_	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	35	amod	_	_
+35	TAP	Tap	PROPN	_	Foreign=Yes	32	flat:foreign	_	_
+36	Portugal	Portugal	PROPN	_	Foreign=Yes	35	flat:foreign	_	SpaceAfter=No
+37	,	,	PUNCT	_	_	36	punct	_	_
+38	British	british	PROPN	_	Foreign=Yes	36	flat:foreign	_	_
+39	Airways	airways	PROPN	_	Foreign=Yes	38	flat:foreign	_	SpaceAfter=No
+40	,	,	PUNCT	_	_	39	punct	_	_
+41	испанскую	испанский	ADJ	_	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	42	amod	_	_
+42	Iberia	Iberia	PROPN	_	Foreign=Yes	12	flat:foreign	_	SpaceAfter=No
+43	,	,	PUNCT	_	_	42	punct	_	_
+44	Singapore	singapore	PROPN	_	Foreign=Yes	42	flat:foreign	_	_
+45	Airlines	airlines	PROPN	_	Foreign=Yes	44	flat:foreign	_	_
+46	(	(	PUNCT	_	_	47	punct	_	SpaceAfter=No
+47	Сингапур	сингапур	PROPN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	45	appos	_	SpaceAfter=No
+48	)	)	PUNCT	_	_	47	punct	_	SpaceAfter=No
+49	.	.	PUNCT	_	_	47	punct	_	_
+
+# sent_id = 3596
+# text = Туда также попали перевозчики из Италии, Швейцарии и Индии.Лидирует в рейтинге из 60 позиций флагманский перевозчик Гонконга Cathay Pacific Airways.
+1	Туда	туда	ADV	_	Degree=Pos	3	advmod	_	_
+2	также	также	ADV	_	Degree=Pos	3	advmod	_	_
+3	попали	попадать	VERB	_	Aspect=Perf|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin|Voice=Act	11	parataxis	_	_
+4	перевозчики	перевозчик	NOUN	_	Animacy=Anim|Case=Nom|Gender=Masc|Number=Plur	3	nsubj	_	_
+5	из	из	ADP	_	_	6	case	_	_
+6	Италии	италия	PROPN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	4	nmod	_	SpaceAfter=No
+7	,	,	PUNCT	_	_	6	punct	_	_
+8	Швейцарии	швейцария	PROPN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	6	conj	_	_
+9	и	и	CCONJ	_	_	10	cc	_	_
+10	Индии.	Индии.	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Sing	6	conj	_	SpaceAfter=No
+11	Лидирует	лидиревать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+12	в	в	ADP	_	_	13	case	_	_
+13	рейтинге	рейтинг	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	11	obl	_	_
+14	из	из	ADP	_	_	16	case	_	_
+15	60	60	NUM	_	_	16	nummod	_	_
+16	позиций	позиция	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	11	obl	_	_
+17	флагманский	флагманский	ADJ	_	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	18	amod	_	_
+18	перевозчик	перевозчик	NOUN	_	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	11	nsubj	_	_
+19	Гонконга	Гонконг	PROPN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	18	nmod	_	_
+20	Cathay	Cathay	PROPN	_	Foreign=Yes	19	flat:foreign	_	_
+21	Pacific	Pacific	PROPN	_	Foreign=Yes	20	flat:foreign	_	_
+22	Airways	airways	PROPN	_	Foreign=Yes	21	flat:foreign	_	SpaceAfter=No
+23	.	.	PUNCT	_	_	22	punct	_	_
+
+# sent_id = 3597
+# text = Рейтинг публикуется частями, на момент написания заметки семь позиций перечня еще не обнародованы.Компания Jacdec занимается проблемами безопасности коммерческих перевозок.
+1	Рейтинг	рейтинг	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	2	nsubj:pass	_	_
+2	публикуется	публиковать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	_
+3	частями	часть	NOUN	_	Animacy=Inan|Case=Ins|Gender=Fem|Number=Plur	2	obl:agent	_	SpaceAfter=No
+4	,	,	PUNCT	_	_	3	punct	_	_
+5	на	на	ADP	_	_	6	case	_	_
+6	момент	момент	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	2	obl	_	_
+7	написания	написание	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	6	nmod	_	_
+8	заметки	заметка	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	7	nmod	_	_
+9	семь	семь	NUM	_	Case=Nom	10	nummod:gov	_	_
+10	позиций	позиция	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	2	nsubj:pass	_	_
+11	перечня	перечень	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	10	nmod	_	_
+12	еще	еще	ADV	_	Degree=Pos	14	advmod	_	_
+13	не	не	PART	_	_	14	advmod	_	_
+14	обнародованы.	обнародованы.	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Sing	2	obl:agent	_	SpaceAfter=No
+15	Компания	Компание	PROPN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	14	nmod	_	_
+16	Jacdec	Jacdec	PROPN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	15	nmod	_	_
+17	занимается	заниматься	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Mid	2	parataxis	_	_
+18	проблемами	проблема	NOUN	_	Animacy=Inan|Case=Ins|Gender=Fem|Number=Plur	17	obl	_	_
+19	безопасности	безопасность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	18	nmod	_	_
+20	коммерческих	коммерческий	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	21	amod	_	_
+21	перевозок	перевозка	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	19	nmod	_	SpaceAfter=No
+22	.	.	PUNCT	_	_	21	punct	_	_
+
+# sent_id = 3598
+# text = Составляемый ею рейтинг базируется на количестве серьезных инцидентов с лайнерами авиакомпаний, смертей пассажиров, числе лет без аварий и так далее.
+1	Составляемый	составлять	VERB	_	Aspect=Imp|Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	3	amod	_	_
+2	ею	она	PRON	_	Case=Ins|Gender=Fem|Number=Sing|Person=3	1	obl	_	_
+3	рейтинг	рейтинг	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	4	nsubj	_	_
+4	базируется	базироваться	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Mid	0	root	_	_
+5	на	на	ADP	_	_	6	case	_	_
+6	количестве	количество	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	4	obl	_	_
+7	серьезных	серьезной	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	8	amod	_	_
+8	инцидентов	инцидент	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	6	nmod	_	_
+9	с	с	ADP	_	_	10	case	_	_
+10	лайнерами	лайнер	NOUN	_	Animacy=Anim|Case=Ins|Gender=Masc|Number=Plur	8	nmod	_	_
+11	авиакомпаний	авиакомпания	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	10	nmod	_	SpaceAfter=No
+12	,	,	PUNCT	_	_	11	punct	_	_
+13	смертей	смерть	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	11	conj	_	_
+14	пассажиров	пассажир	NOUN	_	Animacy=Anim|Case=Gen|Gender=Masc|Number=Plur	13	nmod	_	SpaceAfter=No
+15	,	,	PUNCT	_	_	14	punct	_	_
+16	числе	число	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	11	conj	_	_
+17	лет	год	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	16	nmod	_	_
+18	без	без	ADP	_	_	19	case	_	_
+19	аварий	авария	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	17	nmod	_	_
+20	и	и	CCONJ	_	_	22	cc	_	_
+21	так	так	ADV	_	Degree=Pos	22	fixed	_	_
+22	далее	далее	ADV	_	Degree=Pos	4	conj	_	SpaceAfter=No
+23	.	.	PUNCT	_	_	22	punct	_	_
+
+# newpar
+# sent_id = 3599

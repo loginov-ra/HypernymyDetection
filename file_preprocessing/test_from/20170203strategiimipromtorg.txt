@@ -1,0 +1,211 @@
+# text = # newpar
+# sent_id = 3609
+# text = Минпромторг планирует разработать новые и актуализировать ранее принятые стратегии развития отраслей промышленности.
+1	Минпромторг	Минпромторг	NOUN	_	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	_
+2	планирует	планировать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	_
+3	разработать	разрабатывать	VERB	_	Aspect=Perf|VerbForm=Inf|Voice=Act	2	xcomp	_	_
+4	новые	новый	ADJ	_	Animacy=Inan|Case=Acc|Degree=Pos|Number=Plur	3	obj	_	_
+5	и	и	CCONJ	_	_	6	cc	_	_
+6	актуализировать	актуализировать	VERB	_	Aspect=Imp|VerbForm=Inf|Voice=Act	3	conj	_	_
+7	ранее	ранее	ADV	_	Degree=Pos	8	advmod	_	_
+8	принятые	принимать	VERB	_	Animacy=Inan|Aspect=Perf|Case=Acc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	9	amod	_	_
+9	стратегии	стратегия	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Plur	6	obj	_	_
+10	развития	развитие	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	9	nmod	_	_
+11	отраслей	отрасль	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	10	nmod	_	_
+12	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	11	nmod	_	SpaceAfter=No
+13	.	.	PUNCT	_	_	12	punct	_	_
+
+# sent_id = 3610
+# text = Задача должна быть решена в 2017-2018 годах.
+1	Задача	задача	NOUN	_	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	2	nsubj	_	_
+2	должна	должен	ADJ	_	Degree=Pos|Gender=Fem|Number=Sing|Variant=Short	0	root	_	_
+3	быть	быть	AUX	_	Aspect=Imp|VerbForm=Inf|Voice=Act	4	aux:pass	_	_
+4	решена	решать	VERB	_	Aspect=Perf|Gender=Fem|Number=Sing|Tense=Past|Variant=Short|VerbForm=Part|Voice=Pass	2	dep	_	_
+5	в	в	ADP	_	_	9	case	_	_
+6	2017	2017	NUM	_	_	9	nummod	_	SpaceAfter=No
+7	-	-	PUNCT	_	_	6	punct	_	SpaceAfter=No
+8	2018	2018	NUM	_	_	6	nummod	_	_
+9	годах	год	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Plur	4	obl	_	SpaceAfter=No
+10	.	.	PUNCT	_	_	9	punct	_	_
+
+# sent_id = 3611
+# text = Об этом говорится в пресс-релизе министерства, поступившем в редакцию "Ленты.ру"."Утвержденный министерством план на ближайшие два года содержит в себе разработку и актуализацию стратегий по 20 отраслям промышленности", -- заявил глава ведомства Денис Мантуров.Уже в первом квартале 2017 года Минпромторг планирует подготовить проекты стратегий развития транспортного машиностроения, металлургической промышленности, производства промышленной продукции реабилитационной направленности.
+1	Об	о	ADP	_	_	2	case	_	_
+2	этом	это	PRON	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	3	obl	_	_
+3	говорится	говорить	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	_
+4	в	в	ADP	_	_	5	case	_	_
+5	пресс-релизе	пресс-релиза	NOUN	_	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	3	obl	_	_
+6	министерства	министерство	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	5	nmod	_	SpaceAfter=No
+7	,	,	PUNCT	_	_	6	punct	_	_
+8	поступившем	поступивать	VERB	_	Aspect=Perf|Case=Loc|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act	6	amod	_	_
+9	в	в	ADP	_	_	10	case	_	_
+10	редакцию	редакция	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	8	obl	_	_
+11	"	"	PUNCT	_	_	12	punct	_	SpaceAfter=No
+12	Ленты.ру	Ленты.р	PROPN	_	Animacy=Anim|Case=Dat|Gender=Masc|Number=Sing	10	appos	_	SpaceAfter=No
+13	"	"	PUNCT	_	_	12	punct	_	SpaceAfter=No
+14	.	.	PUNCT	_	_	12	punct	_	SpaceAfter=No
+15	"	"	PUNCT	_	_	16	punct	_	SpaceAfter=No
+16	Утвержденный	утверждать	VERB	_	Aspect=Perf|Case=Nom|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	18	amod	_	_
+17	министерством	министерство	NOUN	_	Animacy=Inan|Case=Ins|Gender=Neut|Number=Sing	16	obl:agent	_	_
+18	план	план	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	6	appos	_	_
+19	на	на	ADP	_	_	22	case	_	_
+20	ближайшие	ближайший	ADJ	_	Animacy=Inan|Case=Acc|Degree=Pos|Number=Plur	21	amod	_	_
+21	два	два	NUM	_	Animacy=Inan|Case=Acc|Gender=Masc	22	nummod:gov	_	_
+22	года	год	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	23	obl	_	_
+23	содержит	содержать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	3	conj	_	_
+24	в	в	ADP	_	_	25	case	_	_
+25	себе	себя	PRON	_	Case=Loc	23	obl	_	_
+26	разработку	разработка	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	23	obj	_	_
+27	и	и	CCONJ	_	_	28	cc	_	_
+28	актуализацию	актуализация	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	26	conj	_	_
+29	стратегий	стратегия	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	28	nmod	_	_
+30	по	по	ADP	_	_	29	case	_	_
+31	20	20	NUM	_	_	32	nummod	_	_
+32	отраслям	отрасль	NOUN	_	Animacy=Inan|Case=Dat|Gender=Fem|Number=Plur	29	nmod	_	_
+33	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	32	nmod	_	SpaceAfter=No
+34	"	"	PUNCT	_	_	33	punct	_	SpaceAfter=No
+35	,	,	PUNCT	_	_	33	punct	_	_
+36	--	--	PUNCT	_	_	33	punct	_	_
+37	заявил	заявлять	VERB	_	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	3	parataxis	_	_
+38	глава	глава	NOUN	_	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	37	nsubj	_	_
+39	ведомства	ведомство	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	40	nmod	_	_
+40	Денис	Денис	PROPN	_	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	38	appos	_	_
+41	Мантуров.	Мантуровадратный	ADJ	_	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	42	amod	_	SpaceAfter=No
+42	Уже	Уж	PROPN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	40	appos	_	_
+43	в	в	ADP	_	_	45	case	_	_
+44	первом	первый	ADJ	_	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	45	amod	_	_
+45	квартале	квартал	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	42	nmod	_	_
+46	2017	2017	NUM	_	_	47	nummod	_	_
+47	года	год	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	45	nmod	_	_
+48	Минпромторг	Минпромторг	PROPN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	49	nsubj	_	_
+49	планирует	планировать	VERB	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	3	conj	_	_
+50	подготовить	подготовить	VERB	_	Aspect=Perf|VerbForm=Inf|Voice=Act	49	xcomp	_	_
+51	проекты	проект	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Plur	50	obj	_	_
+52	стратегий	стратегия	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	51	nmod	_	_
+53	развития	развитие	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	52	nmod	_	_
+54	транспортного	транспортный	ADJ	_	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	55	amod	_	_
+55	машиностроения	машиностроение	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	53	nmod	_	SpaceAfter=No
+56	,	,	PUNCT	_	_	55	punct	_	_
+57	металлургической	металлургический	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	58	amod	_	_
+58	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	55	conj	_	SpaceAfter=No
+59	,	,	PUNCT	_	_	58	punct	_	_
+60	производства	производство	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	55	conj	_	_
+61	промышленной	промышленный	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	62	amod	_	_
+62	продукции	продукция	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	60	nmod	_	_
+63	реабилитационной	реабилитационный	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	64	amod	_	_
+64	направленности	направленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	62	nmod	_	SpaceAfter=No
+65	.	.	PUNCT	_	_	64	punct	_	_
+
+# sent_id = 3612
+# text = Во втором квартале -- программные документы по развитию сельскохозяйственного машиностроения, индустрии детских товаров, обработке, утилизации и обезвреживанию отходов производства и потребления.В июне на утверждение правительства будет представлен проект Стратегии развития станкоинструментальной промышленности на период до 2030 года.
+1	Во	в	ADP	_	_	3	case	_	_
+2	втором	второй	ADJ	_	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	3	amod	_	_
+3	квартале	квартал	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	32	obl	_	_
+4	--	--	PUNCT	_	_	3	punct	_	_
+5	программные	программный	ADJ	_	Case=Nom|Degree=Pos|Number=Plur	6	amod	_	_
+6	документы	документ	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur	3	nsubj	_	_
+7	по	по	ADP	_	_	8	case	_	_
+8	развитию	развитие	NOUN	_	Animacy=Inan|Case=Dat|Gender=Neut|Number=Sing	6	nmod	_	_
+9	сельскохозяйственного	сельскохозяйственный	ADJ	_	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	10	amod	_	_
+10	машиностроения	машиностроение	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	8	nmod	_	SpaceAfter=No
+11	,	,	PUNCT	_	_	10	punct	_	_
+12	индустрии	индустрия	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	10	conj	_	_
+13	детских	детский	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	14	amod	_	_
+14	товаров	товар	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	12	nmod	_	SpaceAfter=No
+15	,	,	PUNCT	_	_	14	punct	_	_
+16	обработке	обработка	NOUN	_	Animacy=Inan|Case=Dat|Gender=Fem|Number=Sing	14	conj	_	SpaceAfter=No
+17	,	,	PUNCT	_	_	16	punct	_	_
+18	утилизации	утилизация	NOUN	_	Animacy=Inan|Case=Dat|Gender=Fem|Number=Sing	14	conj	_	_
+19	и	и	CCONJ	_	_	20	cc	_	_
+20	обезвреживанию	обезвреживание	NOUN	_	Animacy=Inan|Case=Dat|Gender=Neut|Number=Sing	3	conj	_	_
+21	отходов	отход	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	20	nmod	_	_
+22	производства	производство	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	21	nmod	_	_
+23	и	и	CCONJ	_	_	24	cc	_	_
+24	потребления	потребление	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	22	conj	_	SpaceAfter=No
+25	.	.	PUNCT	_	_	24	punct	_	SpaceAfter=No
+26	В	в	ADP	_	_	27	case	_	_
+27	июне	июнь	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	32	obl	_	_
+28	на	на	ADP	_	_	29	case	_	_
+29	утверждение	утверждение	NOUN	_	Animacy=Inan|Case=Acc|Gender=Neut|Number=Sing	32	obl	_	_
+30	правительства	правительство	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	29	nmod	_	_
+31	будет	быть	AUX	_	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	32	aux:pass	_	_
+32	представлен	представливать	VERB	_	Aspect=Perf|Gender=Masc|Number=Sing|Tense=Past|Variant=Short|VerbForm=Part|Voice=Pass	0	root	_	_
+33	проект	проект	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	32	nsubj	_	_
+34	Стратегии	стратегия	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	33	nmod	_	_
+35	развития	развитие	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	34	nmod	_	_
+36	станкоинструментальной	станкоинструментальный	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	37	amod	_	_
+37	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	35	nmod	_	_
+38	на	на	ADP	_	_	39	case	_	_
+39	период	период	NOUN	_	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	35	nmod	_	_
+40	до	до	ADP	_	_	42	case	_	_
+41	2030	2030	NUM	_	_	42	nummod	_	_
+42	года	год	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	39	nmod	_	SpaceAfter=No
+43	.	.	PUNCT	_	_	42	punct	_	_
+
+# sent_id = 3613
+# text = Реализация этой стратегии призвана снять критическую зависимость отечественного станкостроения от импортных комплектующих.
+1	Реализация	реализация	NOUN	_	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	4	nsubj	_	_
+2	этой	этот	DET	_	Case=Gen|Gender=Fem|Number=Sing	3	amod	_	_
+3	стратегии	стратегия	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	1	nmod	_	_
+4	призвана	призванный	ADJ	_	Degree=Pos|Gender=Fem|Number=Sing|Variant=Short	0	root	_	_
+5	снять	снимать	VERB	_	Aspect=Perf|VerbForm=Inf|Voice=Act	4	dep	_	_
+6	критическую	критический	ADJ	_	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	7	amod	_	_
+7	зависимость	зависимость	NOUN	_	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	5	obj	_	_
+8	отечественного	отечественный	ADJ	_	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	9	amod	_	_
+9	станкостроения	станкостроение	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	7	nmod	_	_
+10	от	от	ADP	_	_	9	case	_	_
+11	импортных	импортный	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	12	amod	_	_
+12	комплектующих	комплектующая	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Plur	9	nmod	_	SpaceAfter=No
+13	.	.	PUNCT	_	_	12	punct	_	_
+
+# sent_id = 3614
+# text = А до конца года должны быть доработаны стратегии развития авиационной промышленности, пищевого машиностроения, народных художественных промыслов.В 2018 году актуализированные документы стратегического планирования появятся в тяжелом и энергетическом машиностроении, легкой промышленности, судостроении, электронной, медицинской и фармацевтической и других отраслях.
+1	А	а	CCONJ	_	_	5	cc	_	_
+2	до	до	ADP	_	_	3	case	_	_
+3	конца	конец	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	5	nmod	_	_
+4	года	год	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing	3	nmod	_	_
+5	должны	должен	ADJ	_	Degree=Pos|Number=Plur|Variant=Short	0	root	_	_
+6	быть	быть	AUX	_	Aspect=Imp|VerbForm=Inf|Voice=Act	7	aux:pass	_	_
+7	доработаны	дорабатывать	VERB	_	Aspect=Perf|Number=Plur|Tense=Past|Variant=Short|VerbForm=Part|Voice=Pass	5	dep	_	_
+8	стратегии	стратегия	NOUN	_	Animacy=Inan|Case=Dat|Gender=Fem|Number=Sing	7	obl	_	_
+9	развития	развитие	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	8	nmod	_	_
+10	авиационной	авиационный	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	11	amod	_	_
+11	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	9	nmod	_	SpaceAfter=No
+12	,	,	PUNCT	_	_	11	punct	_	_
+13	пищевого	пищевой	ADJ	_	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	14	amod	_	_
+14	машиностроения	машиностроение	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	11	conj	_	SpaceAfter=No
+15	,	,	PUNCT	_	_	14	punct	_	_
+16	народных	народный	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	18	amod	_	_
+17	художественных	художественный	ADJ	_	Case=Gen|Degree=Pos|Number=Plur	18	amod	_	_
+18	промыслов.	промысловент	NOUN	_	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur	11	conj	_	SpaceAfter=No
+19	В	в	ADP	_	_	21	case	_	_
+20	2018	2018	NUM	_	_	21	nummod	_	_
+21	году	год	NOUN	_	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing	26	obl	_	_
+22	актуализированные	актуализировать	VERB	_	Aspect=Perf|Case=Nom|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	23	amod	_	_
+23	документы	документ	NOUN	_	Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur	26	nsubj	_	_
+24	стратегического	стратегический	ADJ	_	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	25	amod	_	_
+25	планирования	планирование	NOUN	_	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	23	nmod	_	_
+26	появятся	появляться	VERB	_	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Fut|VerbForm=Fin|Voice=Mid	5	parataxis	_	_
+27	в	в	ADP	_	_	28	case	_	_
+28	тяжелом	тяжелое	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	5	nmod	_	_
+29	и	и	CCONJ	_	_	31	cc	_	_
+30	энергетическом	энергетический	ADJ	_	Case=Loc|Degree=Pos|Gender=Neut|Number=Sing	31	amod	_	_
+31	машиностроении	машиностроение	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	28	conj	_	SpaceAfter=No
+32	,	,	PUNCT	_	_	31	punct	_	_
+33	легкой	легкий	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	34	amod	_	_
+34	промышленности	промышленность	NOUN	_	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	28	conj	_	SpaceAfter=No
+35	,	,	PUNCT	_	_	34	punct	_	_
+36	судостроении	судостроение	NOUN	_	Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing	28	conj	_	SpaceAfter=No
+37	,	,	PUNCT	_	_	36	punct	_	_
+38	электронной	электронный	ADJ	_	Case=Ins|Degree=Pos|Gender=Fem|Number=Sing	45	amod	_	SpaceAfter=No
+39	,	,	PUNCT	_	_	38	punct	_	_
+40	медицинской	медицинский	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	38	conj	_	_
+41	и	и	CCONJ	_	_	42	cc	_	_
+42	фармацевтической	фармацевтический	ADJ	_	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	38	conj	_	_
+43	и	и	CCONJ	_	_	44	cc	_	_
+44	других	другой	ADJ	_	Case=Loc|Degree=Pos|Number=Plur	38	conj	_	_
+45	отраслях	отрасль	NOUN	_	Animacy=Inan|Case=Loc|Gender=Fem|Number=Plur	0	nmod	_	SpaceAfter=No
+46	.	.	PUNCT	_	_	45	punct	_	_
+
+# newpar
+# sent_id = 3615

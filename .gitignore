@@ -1,5 +1,8 @@
+*.ipynb_checkpoints*
+data
 Lenta
 RuThes
 UstalovData
 vocab_data
 Sentences
+*pycache*
