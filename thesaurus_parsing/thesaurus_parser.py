@@ -139,6 +139,7 @@ class ThesaurusParser:
         
         self.verbose = verbose
         self.thesaurus_dir = thesaurus_dir
+        self.need_closure = need_closure
         
         # Parsing thesaurus files
         self.read_entities_from_xml()
@@ -157,6 +158,8 @@ class ThesaurusParser:
                 if not self.closure_built[lemma]:
                     self.closure_dfs(lemma)
             self.closed_hypernymy = dict(self.closed_hypernymy)
+        else:
+            self.closed_hypernymy = self.hypernyms_dict
             
           
     def save_thesaurus(self, path):
