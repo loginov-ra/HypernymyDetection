@@ -162,6 +162,8 @@ class ThesaurusParser:
         else:
             self.closed_hypernymy = self.hypernyms_dict
             
+        self.mwe_tokenizer = self.form_mwe_tokenizer()
+            
           
     def save_thesaurus(self, path):
         if not os.path.exists(path):

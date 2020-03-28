@@ -9,48 +9,91 @@ from os.path import join
 from tqdm import tqdm_notebook as tqdm
 import json
 from thesaurus_parsing.thesaurus_parser import ThesaurusParser
+from syntax_trees.syntax_tree import SyntaxTree
 
 
 class ParsedSentence:
-    def __init__(self, tagged_lemma, mwe_tokenizer, deeppavlov_lemma=None):
+    def __init__(self, init_tokens, tagged_lemma, thesaurus, deeppavlov_lemma=None, syntax_model=None):
+        self.init_tokens = init_tokens
         self.tagged_lemma = tagged_lemma
         self.deeppavlov_lemma = deeppavlov_lemma
-        self.mwe_tokenizer = mwe_tokenizer
+        self.syntax_tree = SyntaxTree(syntax_model) if syntax_model else None
+        self.thesaurus = thesaurus
+        self.mwe_tokenizer = thesaurus.mwe_tokenizer
+        
+        self.make_multitokens()
+        if self.syntax_tree:
+            self.parse_syntax()
+            
     
+    def parse_syntax(self):
+        self.syntax_tree.load(self.init_tokens)
+        self.syntax_tree.build()
     
     def make_multitokens(self):
         tokens = self.tagged_lemma if self.deeppavlov_lemma is None else self.deeppavlov_lemma
-        return self.mwe_tokenizer.tokenize(tokens)
-    
+        multitokens = self.mwe_tokenizer.tokenize(tokens)
+        
+        multi_to_main_token = [0] * len(multitokens)
+        start_token_id = 0
+        
+        for i, multitoken in enumerate(multitokens):
+            parts = multitoken.split()
+            
+            if multitoken not in self.thesaurus.lemma_to_entry or len(parts) == 1:
+                multi_to_main_token[i] = start_token_id
+            else:
+                entry_id = self.thesaurus.lemma_to_entry[multitoken]
+                main_word = self.thesaurus.text_entries[entry_id]["main_word"]
+                part_id = parts.index(main_word)
+                multi_to_main_token[i] = start_token_id + part_id
+                
+            start_token_id += len(parts)
+            
+        self.multitokens = multitokens
+        self.multi_to_main_token = multi_to_main_token
+                
     
     def to_json(self):
         info_json = {
-            "initial": self.tagged_lemma,
-            "multi": self.make_multitokens()
+            "initial": self.init_tokens,
+            "tagged_lemma": self.tagged_lemma,
+            "multi": [self.multitokens, self.multi_to_main_token]
         }
         
         if self.deeppavlov_lemma is not None:
             info_json["deeppavlov"] = self.deeppavlov_lemma
             
+        if self.syntax_tree:
+            info_json["syntax"] = self.syntax_tree.to_json()
+            
         return info_json
 
 
 class SentenceReader:
-    def __init__(self, thesaurus, need_deeppavlov=True):
+    def __init__(self, thesaurus, need_deeppavlov=True, deeppavlov_model=None,
+                 need_syntax=True, syntax_model=None):
         self.need_deeppavlov = need_deeppavlov
         
         if need_deeppavlov:
-            self.deeppavlov_lemma = build_model(
+            self.deeppavlov_lemma = deeppavlov_model if deeppavlov_model else build_model(
                 configs.morpho_tagger.BERT.morpho_ru_syntagrus_bert,
+                download=False
+            )
+            
+        if need_syntax:
+            self.syntax_model = syntax_model if syntax_model else build_model(
+                configs.syntax.syntax_ru_syntagrus_bert,
                 download=False
             )
         
         self.tokenizer = WordPunctTokenizer()
-        self.mwe_tokenizer = thesaurus.form_mwe_tokenizer()
+        self.thesaurus = thesaurus
         
         
     def process_file(self, filename, verbose=False):
         tagged_lemmas = []
+        initial_sentences = []
         
         # Stats for output
         broken_sentences = 0
@@ -58,6 +101,7 @@ class SentenceReader:
         
         with open(filename) as tagged_file:
             current_sentence_tokens = []
+            current_sentence_lemmas = []
             need_append = False
 
             for line in tagged_file.readlines():
@@ -66,32 +110,40 @@ class SentenceReader:
                 elif line.startswith("# text"):
                     continue
                 elif len(line) < 2:
-                    sentences_divided = self.divide_tagged(current_sentence_tokens)
-                    tagged_lemmas += sentences_divided
-                    broken_sentences += (len(sentences_divided) - 1)
+                    sentences_lemma_divided = self.divide_tagged(current_sentence_lemmas)
+                    sentence_initial_divided = self.divide_tagged(current_sentence_tokens)
+                    
+                    tagged_lemmas += sentences_lemma_divided
+                    initial_sentences += sentence_initial_divided
+                    broken_sentences += (len(sentences_lemma_divided) - 1)
                     
                     need_append = False
                     current_sentence_tokens = []
+                    current_sentence_lemmas = []
                 else:
                     if need_append:
-                        current_sentence_tokens.append(line.split('\t')[2])
+                        line_splitted = line.split('\t')
+                        current_sentence_tokens.append(line_splitted[1].lower())
+                        current_sentence_lemmas.append(line_splitted[2].lower())
                         
         parsed_sentences = []
         
-        for tokens in tagged_lemmas:
+        for init_tokens, lemma_tokens in zip(initial_sentences, tagged_lemmas):
             deeppavlov_lemma = None
             
             if self.need_deeppavlov:
                 try:
-                    deeppavlov_lemma = self.get_deeppavlov_lemma(tokens)
+                    deeppavlov_lemma = self.get_deeppavlov_lemma(init_tokens)
                 except:
                     failed_lemmatize += 1
                     deeppavlov_lemma = None
             
             parsed_sentences.append(ParsedSentence(
-                tokens,
-                self.mwe_tokenizer,
-                deeppavlov_lemma
+                init_tokens,
+                lemma_tokens,
+                self.thesaurus,
+                deeppavlov_lemma,
+                self.syntax_model
             ))
         
         if verbose:
@@ -130,8 +182,7 @@ class SentenceReader:
     
     
     def get_deeppavlov_lemma(self, tagged_sentence):
-        sent = " ".join(tagged_sentence)
-        sentences = [sent]
+        sentences = [tagged_sentence]
         morpho_tokens = self.deeppavlov_lemma(sentences)[0].split('\n')
         lemmatized_tokens = [x.split('\t')[2] for x in morpho_tokens if len(x.split('\t')) == 10]
         return lemmatized_tokens
