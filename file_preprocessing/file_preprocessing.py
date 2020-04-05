@@ -10,6 +10,7 @@ from tqdm import tqdm_notebook as tqdm
 import json
 from thesaurus_parsing.thesaurus_parser import ThesaurusParser
 from syntax_trees.syntax_tree import SyntaxTree
+import os
 
 
 class ParsedSentence:
@@ -24,11 +25,13 @@ class ParsedSentence:
         self.make_multitokens()
         if self.syntax_tree:
             self.parse_syntax()
-            
-    
+                
     def parse_syntax(self):
         self.syntax_tree.load(self.init_tokens)
-        self.syntax_tree.build()
+        try:
+            self.syntax_tree.build()
+        except:
+            self.syntax_tree = None
     
     def make_multitokens(self):
         tokens = self.tagged_lemma if self.deeppavlov_lemma is None else self.deeppavlov_lemma
@@ -45,15 +48,17 @@ class ParsedSentence:
             else:
                 entry_id = self.thesaurus.lemma_to_entry[multitoken]
                 main_word = self.thesaurus.text_entries[entry_id]["main_word"]
-                part_id = parts.index(main_word)
+                try:
+                    part_id = parts.index(main_word)
+                except:
+                    part_id = 0
                 multi_to_main_token[i] = start_token_id + part_id
                 
             start_token_id += len(parts)
             
         self.multitokens = multitokens
         self.multi_to_main_token = multi_to_main_token
-                
-    
+                    
     def to_json(self):
         info_json = {
             "initial": self.init_tokens,
@@ -89,8 +94,7 @@ class SentenceReader:
         
         self.tokenizer = WordPunctTokenizer()
         self.thesaurus = thesaurus
-        
-        
+                
     def process_file(self, filename, verbose=False):
         tagged_lemmas = []
         initial_sentences = []
@@ -155,7 +159,6 @@ class SentenceReader:
         
         return parsed_sentences
     
-    
     def process_directory(self, dir_path, verbose=False):
         text_names = listdir(dir_path)
         all_sentences = []
@@ -166,21 +169,12 @@ class SentenceReader:
             all_sentences += parsed_sentences
             
         return all_sentences
-    
-    
+       
     def divide_tagged(self, tagged_sentence):
-        if tagged_sentence[-1] == ".":
-            tagged_sentence = tagged_sentence[:-1]
-            
-        if "." not in tagged_sentence:
-            return [tagged_sentence + ["."]]
+        single_sentence = " ".join(tagged_sentence)
+        sentence_parts = single_sentence.split(".")
+        return [self.tokenizer.tokenize(part) + ["."] for part in sentence_parts if len(part) > 0]
         
-        full_text = " ".join(tagged_sentence)
-        sentence_parts = full_text.split(".")
-        
-        return [self.tokenizer.tokenize(part) + ["."] for part in sentence_parts]
-    
-    
     def get_deeppavlov_lemma(self, tagged_sentence):
         sentences = [tagged_sentence]
         morpho_tokens = self.deeppavlov_lemma(sentences)[0].split('\n')
@@ -194,6 +188,10 @@ def make_jsons_from_directory(reader, dir_from, dir_to, suffix="_processed", enc
     for filename in text_names:
         path_from = join(dir_from, filename)
         path_to = join(dir_to, filename + suffix + ".json")
+        
+        if os.path.isfile(path_to):
+            continue
+            
         parsed_sentences = reader.process_file(path_from)
         parsed_sentences = [sent.to_json() for sent in parsed_sentences]
         with open(path_to, "w", encoding=encoding) as out_file:
