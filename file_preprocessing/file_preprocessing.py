@@ -14,10 +14,12 @@ import os
 
 
 class ParsedSentence:
-    def __init__(self, init_tokens, tagged_lemma, thesaurus, deeppavlov_lemma=None, syntax_model=None):
+    def __init__(self, init_tokens, tagged_lemma, thesaurus, deeppavlov_lemma=None,
+                 deeppavlov_pos=None, syntax_model=None):
         self.init_tokens = init_tokens
         self.tagged_lemma = tagged_lemma
         self.deeppavlov_lemma = deeppavlov_lemma
+        self.deeppavlov_pos = deeppavlov_pos
         self.syntax_tree = SyntaxTree(syntax_model) if syntax_model else None
         self.thesaurus = thesaurus
         self.mwe_tokenizer = thesaurus.mwe_tokenizer
@@ -68,6 +70,9 @@ class ParsedSentence:
         
         if self.deeppavlov_lemma is not None:
             info_json["deeppavlov"] = self.deeppavlov_lemma
+            
+        if self.deeppavlov_pos is not None:
+            info_json["pos"] = self.deeppavlov_pos
             
         if self.syntax_tree:
             info_json["syntax"] = self.syntax_tree.to_json()
@@ -137,16 +142,18 @@ class SentenceReader:
             
             if self.need_deeppavlov:
                 try:
-                    deeppavlov_lemma = self.get_deeppavlov_lemma(init_tokens)
+                    deeppavlov_lemma, deeppavlov_pos = self.get_deeppavlov_info(init_tokens)
                 except:
                     failed_lemmatize += 1
                     deeppavlov_lemma = None
+                    deeppavlov_pos = None
             
             parsed_sentences.append(ParsedSentence(
                 init_tokens,
                 lemma_tokens,
                 self.thesaurus,
                 deeppavlov_lemma,
+                deeppavlov_pos,
                 self.syntax_model
             ))
         
@@ -175,11 +182,13 @@ class SentenceReader:
         sentence_parts = single_sentence.split(".")
         return [self.tokenizer.tokenize(part) + ["."] for part in sentence_parts if len(part) > 0]
         
-    def get_deeppavlov_lemma(self, tagged_sentence):
+    def get_deeppavlov_info(self, tagged_sentence):
         sentences = [tagged_sentence]
         morpho_tokens = self.deeppavlov_lemma(sentences)[0].split('\n')
-        lemmatized_tokens = [x.split('\t')[2] for x in morpho_tokens if len(x.split('\t')) == 10]
-        return lemmatized_tokens
+        splitted_info = [x.split('\t') for x in morpho_tokens]
+        lemmatized_tokens = [splitted[2] for splitted in splitted_info if len(splitted) == 10]
+        pos = [splitted[3] for splitted in splitted_info if len(splitted) == 10]
+        return lemmatized_tokens, pos
     
     
 def make_jsons_from_directory(reader, dir_from, dir_to, suffix="_processed", encoding="utf8"):
