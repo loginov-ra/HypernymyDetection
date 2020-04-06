@@ -111,5 +111,32 @@ class SyntaxTree:
             
         return path[-1::-1]
             
+    def get_syntax_pattern(self, v_from, v_to, pos, lemmas):
+        path = self.get_shortest_path(v_from, v_to)
+        edge_descriptions = []
+        
+        if path is None:
+            return None
+        
+        for i, edge_start in enumerate(path[:-1]):
+            edge_finish = path[i + 1]
+            if self.nodes[edge_start].parent_idx == edge_finish:
+                role = self.nodes[edge_start].role
+            elif self.nodes[edge_finish].parent_idx == edge_start:
+                role = self.nodes[edge_finish].role
+            else:
+                raise(ValueError("Role was not found for tree: {}".format(self.__str__())))
+            
+            edge_description = "{start_word}:{start_pos}:{role}:{finish_pos}:{finish_word}".format(
+                start_word=lemmas[edge_start] if i > 0 else "{}",
+                start_pos=pos[edge_start],
+                role=role,
+                finish_pos=pos[edge_finish],
+                finish_word=lemmas[edge_finish] if i < len(path) - 2 else "{}"
+            )
+            edge_descriptions.append(edge_description)
+            
+        return edge_descriptions
+        
     def to_json(self):
         return [str(node) for node in self.nodes]
