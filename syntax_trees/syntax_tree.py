@@ -69,12 +69,22 @@ class SyntaxTree:
     def build_additional_info_from_nodes(self):
         self.size = len(self.nodes)
         self.children = [[] for _ in range(self.size)]
+        self.children_roles = [dict() for _ in range(self.size)]
+        self.children_types = [dict() for _ in range(self.size)]
         
         for i, node in enumerate(self.nodes):
-            if node.role == "root":
+            if node.role == "root" or node.parent_idx == -1:
                 self.root = node.idx
+                continue
+                
             self.children[node.parent_idx].append(node.idx)
+            self.children_roles[node.parent_idx][node.idx] = node.role
+            self.children_types[node.parent_idx][node.idx] = 'usual'
+            
             self.children[node.idx].append(node.parent_idx)
+            self.children_roles[node.idx][node.parent_idx] = 'parent'
+            self.children_types[node.idx][node.parent_idx] = 'parent'
+            
     
     def build(self):
         parsed = self.model([self.tokens])[0].split('\n')[:-1]
@@ -101,7 +111,33 @@ class SyntaxTree:
             new_node.load_from_string(node_str)
             self.nodes.append(new_node)
         self.build_additional_info_from_nodes()
-            
+    
+    def _compress_conj_edges_dfs(self, idx):
+        self._used[idx] = True
+        
+        for c_idx in self.children[idx]:
+            if not self._used[c_idx]:
+                self._compress_conj_edges_dfs(c_idx)
+                
+        for c_idx in self.children[idx]:
+            role = self.children_roles[idx][c_idx]
+            if role == 'parent':
+                continue
+            for new_child in self.children[c_idx]:
+                new_role = self.children_roles[c_idx][new_child]
+                if new_role == 'conj':
+                    self.children[idx].append(new_child)
+                    self.children[new_child].append(idx)
+                    self.children_types[idx][new_child] = 'conj'
+                    self.children_roles[idx][new_child] = role
+                    self.children_types[new_child][idx] = 'parent'
+                    self.children_roles[new_child][idx] = 'parent'
+                        
+    def compress_conj_edges(self):
+        self._used = [False] * len(self.nodes)
+        self._compress_conj_edges_dfs(self.root)
+        del self._used
+    
     def get_shortest_path(self, v_from, v_to):
         q = Queue()
         q.put(v_from)
@@ -148,10 +184,10 @@ class SyntaxTree:
         
         for i, edge_start in enumerate(path[:-1]):
             edge_finish = path[i + 1]
-            if self.nodes[edge_start].parent_idx == edge_finish:
-                role = self.nodes[edge_start].role
-            elif self.nodes[edge_finish].parent_idx == edge_start:
-                role = self.nodes[edge_finish].role
+            if self.children_roles[edge_start][edge_finish] == 'parent':
+                role = self.children_roles[edge_finish][edge_start]
+            elif self.children_roles[edge_finish][edge_start] == 'parent':
+                role = self.children_roles[edge_start][edge_finish]
             else:
                 raise(ValueError("Role was not found for tree: {}".format(self.__str__())))
             

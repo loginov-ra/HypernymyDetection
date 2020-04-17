@@ -96,6 +96,8 @@ class SentenceReader:
                 configs.syntax.syntax_ru_syntagrus_bert,
                 download=False
             )
+        else:
+            self.syntax_model = None
         
         self.tokenizer = WordPunctTokenizer()
         self.thesaurus = thesaurus
@@ -139,6 +141,7 @@ class SentenceReader:
         
         for init_tokens, lemma_tokens in zip(initial_sentences, tagged_lemmas):
             deeppavlov_lemma = None
+            deeppavlov_pos = None
             
             if self.need_deeppavlov:
                 try:
