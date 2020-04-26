@@ -110,9 +110,29 @@ class ThesaurusParser:
                         hypernym_lemma = self.text_entries[hypernym_entry_id]["lemma"]
                         hypernyms_dict[hyponym_lemma].add(hypernym_lemma)
                     
-        self.hypernyms_dict = dict([(hyponym, list(hypernyms)) 
-                                    for hyponym, hypernyms in hypernyms_dict.items()])
+        return dict([(hyponym, list(hypernyms)) 
+                     for hyponym, hypernyms in hypernyms_dict.items()])
 
+    
+    def entity_closure_dfs(self, entity):
+        self.closure_built[entity] = True
+        self.entity_hypernyms_closed[entity].update(self.entity_hypernyms[entity])
+        self.visited += 1
+        
+        if self.verbose:
+            print("Visited:", self.visited)
+            
+        for hypernym_entity in self.entity_hypernyms[entity]:
+            if hypernym_entity not in self.entity_hypernyms:
+                continue
+                
+            if not self.closure_built[hypernym_entity]:
+                self.entity_closure_dfs(hypernym_entity)
+            
+            self.entity_hypernyms_closed[entity].update(self.entity_hypernyms_closed[hypernym_entity])
+        
+        self.entity_hypernyms_closed[entity] = list(self.entity_hypernyms_closed[entity])
+    
     
     def closure_dfs(self, lemma):
         self.closure_built[lemma] = True
@@ -149,18 +169,20 @@ class ThesaurusParser:
         self.build_synsets()
         
         # Building hypernymy dictionary
-        self.make_first_level_hypernymy()
+        self.hypernyms_first = self.make_first_level_hypernymy()
         
+        # Building closure on synsets
         if need_closure:
-            self.closed_hypernymy = defaultdict(set)
-            self.closure_built = dict([(lemma, False) for lemma in self.hypernyms_dict])
+            self.entity_hypernyms_closed = defaultdict(set)
+            self.closure_built = dict([(entity, False) for entity in self.entity_hypernyms])
             self.visited = 0
-            for lemma in self.hypernyms_dict:
-                if not self.closure_built[lemma]:
-                    self.closure_dfs(lemma)
-            self.closed_hypernymy = dict(self.closed_hypernymy)
+            for entity in self.entity_hypernyms:
+                if not self.closure_built[entity]:
+                    self.entity_closure_dfs(entity)
+            self.entity_hypernyms = dict(self.entity_hypernyms_closed)
+            self.hypernyms_dict = self.make_first_level_hypernymy()
         else:
-            self.closed_hypernymy = self.hypernyms_dict
+            self.hypernyms_dict = self.hypernyms_first
             
         self.mwe_tokenizer = self.form_mwe_tokenizer()
             
