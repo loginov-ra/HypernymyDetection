@@ -2,7 +2,6 @@ import sys
 sys.path.append('../')
 
 from collections import Counter
-import fasttext as ft
 import json
 import os
 from thesaurus_parsing.thesaurus_parser import ThesaurusParser
